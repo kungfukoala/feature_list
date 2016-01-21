@@ -1,0 +1,6 @@
+<h1>Feature List</h1>
+
+<% @features.each do |feature| %>
+  <h2><%= link_to feature.title, feature %></h2>
+  <date><%= feature.created_at.strftime("%B, %d, %Y") %></date>
+<% end %>
