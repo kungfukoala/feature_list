@@ -1,0 +1,8 @@
+<%= form_for([@feature, @feature.comments.build]) do |f| %>
+  
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :body %><br>
+  <%= f.text_area :body %><br>
+  <%= f.submit %><br>
+<% end %>

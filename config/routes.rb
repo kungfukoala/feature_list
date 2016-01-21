@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :features
+  resources :features do
+    resources :comments
+  end
   root "features#index"
 end
