@@ -4,4 +4,6 @@
 
 <p><%= comment.body %></p>
 
-<p><%= link_to 'Delete', [comment.feature, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% if user_signed_in? %>
+  <p><%= link_to 'Delete', [comment.feature, comment], method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>

@@ -10,6 +10,9 @@
   <% if user_signed_in? %>
     <%= link_to "New Feature", new_feature_path %>
   <% end %>
+  <% if !user_signed_in? %>
+    <%= link_to "New Feature", new_feature_path %>
+  <% end %>
 <% flash.each do |name, msg| %>
   <%= content_tag(:div, msg, class: "alert") %>
 <% end %>
