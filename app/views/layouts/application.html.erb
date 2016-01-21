@@ -10,6 +10,11 @@
 <% flash.each do |name, msg| %>
   <%= content_tag(:div, msg, class: "alert") %>
 <% end %>
+<% if current_page?(root_path) %>
+  <h1>Feature List</h1>
+  <% else %>
+  <%= link_to 'See All Features', root_path %>
+<% end %>
 <%= yield %>
 <%= link_to "New Feature", new_feature_path %>
 </body>
