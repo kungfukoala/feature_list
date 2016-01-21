@@ -1,0 +1,22 @@
+<%= form_for @feature do |f| %>
+  <% if @feature.errors.any? %>
+    <%= pluralize(@feature.errors.count, "error") %> prevented this post from saving.
+    <ul>
+      <% @feature.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= f.label :title %>
+  <% if @feature.errors[:title].any? %>
+    <ul>
+    <% @feature.errors[:title].each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  <% end %><br>
+  <%= f.text_field :title %><br>
+  <%= f.label :body %><br>
+  <%= f.text_area :body %><br>
+  <%= f.submit %><br>
+<% end %>

@@ -21,6 +21,27 @@ class FeaturesController < ApplicationController
     @feature = Feature.find(params[:id])
   end
 
+  def edit
+    @feature = Feature.find(params[:id])
+  end
+
+  def update
+    @feature = Feature.find(params[:id])
+
+    if @feature.update(params[:feature].permit(:title, :body))
+      redirect_to @feature
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @feature = Feature.find(params[:id])
+    @feature.destroy
+
+    redirect_to root_path
+  end
+
   private
     def feature_params
       params.require(:feature).permit(:title, :body)
