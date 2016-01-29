@@ -6,11 +6,11 @@ class FeaturesController < ApplicationController
   end
 
   def new
-    @feature = Feature.new
+    @feature = current_user.features.build
   end
 
   def create
-    @feature = Feature.new(feature_params)
+    @feature = current_user.features.build(feature_params)
 
     if @feature.save
       redirect_to @feature

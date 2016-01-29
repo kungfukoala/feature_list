@@ -1,6 +1,7 @@
 <h1><%= @feature.title %></h1>
 
 <date><%= time_ago_in_words(@feature.created_at) %></date>
+<p><%= @feature.user.email %></p>
 
 <p><%= @feature.body %></p>
 
